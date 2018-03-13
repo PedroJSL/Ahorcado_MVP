@@ -15,6 +15,7 @@ public interface AhorcadoInterface {
     }
 
     interface Modelo{
+        void nuevaPartida();
         boolean comprobarLetra(String letra);
         void siguienteRonda();
         void mostrarDefinicion(String definicion);
@@ -25,6 +26,7 @@ public interface AhorcadoInterface {
     }
 
     interface Presentador{
+        void iniciarPartida();
        void mostrarPalabraOculta(String palabraOculta);
        boolean comprobarLetra(String letra);
        void mostrarDefinicion(String definicion);

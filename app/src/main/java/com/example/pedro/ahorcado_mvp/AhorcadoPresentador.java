@@ -12,6 +12,11 @@ public class AhorcadoPresentador implements AhorcadoInterface.Presentador {
 
 
     @Override
+    public void iniciarPartida() {
+
+    }
+
+    @Override
     public void mostrarPalabraOculta(String palabraOculta) {
 
     }
