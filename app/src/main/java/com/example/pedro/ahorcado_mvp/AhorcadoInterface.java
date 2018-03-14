@@ -18,6 +18,7 @@ public interface AhorcadoInterface {
         int getErroresMaximos();
         void partidaPerdida();
         void mostrarPuntuacion(String puntuacion);
+        void validarPista(String letra);
     }
 
     interface Modelo {
@@ -51,5 +52,6 @@ public interface AhorcadoInterface {
         int getVidas();
         int getPuntuacion();
         boolean getEstadoPartida();
+        void validarPista(String pista);
     }
 }

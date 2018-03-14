@@ -193,6 +193,17 @@ public class AhorcadoVista extends AppCompatActivity implements AhorcadoInterfac
         tvPuntos.setText(puntuacion);
     }
 
+    @Override
+    public void validarPista(String pista) {
+        for (TextView tv:teclas) {
+            if(tv.getText().toString().equals(pista)){
+                tv.setTextColor(getResources().getColor(R.color.acierto));
+                tv.setEnabled(false);
+                return; //Pa que no siga buscando que solo hay una letra en el teclado xDD
+            }
+        }
+    }
+
     private void actualizarLayout(){
         imgDefinicion.setVisibility(View.GONE);
         img.setImageResource(R.drawable.fallo_0);

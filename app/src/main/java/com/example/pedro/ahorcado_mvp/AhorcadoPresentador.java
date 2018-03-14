@@ -96,5 +96,10 @@ public class AhorcadoPresentador implements AhorcadoInterface.Presentador {
         return m.getPartidaEnCurso();
     }
 
+    @Override
+    public void validarPista(String pista) {
+        v.validarPista(pista);
+    }
+
 
 }

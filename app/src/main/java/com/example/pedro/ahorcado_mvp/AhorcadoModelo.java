@@ -68,6 +68,7 @@ public class AhorcadoModelo implements AhorcadoInterface.Modelo {
             if (!pistaCorrecta) {
                 darPista();
             }
+            p.validarPista(palabra.palabraLetraALetra[random]);
             contadorPista++;
             pistaUsada = true;
         }
