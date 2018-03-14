@@ -7,13 +7,20 @@ package com.example.pedro.ahorcado_mvp;
 public class Palabras {
     private String palabra;
     private String definicion;
-    private String[] palabraOculta;
-    private String[] palabraLetraALetra;
+    String[] palabraOculta;
+    String[] palabraLetraALetra;
 
     public Palabras(String palabra, String definicion) {
         this.palabra = palabra;
         this.definicion = definicion;
         setPalabraOculta();
+    }
+
+    public boolean contieneLetra(String letra) {
+        if (palabra.contains(letra)) {
+            return true;
+        }
+        return false;
     }
 
 
@@ -26,6 +33,15 @@ public class Palabras {
         for (int i = 0; i < palabraLetraALetra.length; i++) {
             palabraOculta[i] = "_";
         }
+    }
+
+    public boolean palabraDescubierta(){
+        for (int i = 0; i < palabraLetraALetra.length ; i++) {
+          if(!palabraOculta[i].equals(palabraLetraALetra[i])){
+              return false;
+          }
+        }
+        return true;
     }
 
     public String getPalabraOculta() {

@@ -9,27 +9,27 @@ public interface AhorcadoInterface {
     interface Vista {
         void damePista();
         void mostrarDefinicion(String definicion);
-        void mostrarPalabraOculta(String palabraOculta);
+        void mostrarPalabraOculta();
         void siguienteRonda();
         void nuevaPartida();
     }
 
     interface Modelo{
         void nuevaPartida();
-        boolean comprobarLetra(String letra);
         void siguienteRonda();
-        void mostrarDefinicion(String definicion);
+        String mostrarDefinicion();
         void darPista();
         void rondaGanada();
         void rondaPerdida();
+        String mostrarPalabraOculta();
         void partidaPerdida();
     }
 
     interface Presentador{
         void iniciarPartida();
-       void mostrarPalabraOculta(String palabraOculta);
+       void mostrarPalabraOculta();
        boolean comprobarLetra(String letra);
-       void mostrarDefinicion(String definicion);
+       void mostrarDefinicion();
        void siguienteRonda();
        void darPista();
        void rondaGanada();
