@@ -26,12 +26,6 @@ public class AhorcadoPresentador implements AhorcadoInterface.Presentador {
     }
 
     @Override
-    public String mostrarPalabraOculta() {
-        return m.mostrarPalabraOculta();
-    }
-
-
-    @Override
     public boolean comprobarLetra(String letra) {
         if(v!=null){
 
@@ -74,11 +68,6 @@ public class AhorcadoPresentador implements AhorcadoInterface.Presentador {
     public void darPista() {
             m.darPista();
         v.mostrarPalabraOculta(m.getPalabra().getPalabraOculta());
-    }
-
-    @Override
-    public int getErrores() {
-        return m.getErrores();
     }
 
     @Override

@@ -10,7 +10,7 @@ public class AhorcadoModelo implements AhorcadoInterface.Modelo {
     private int contadorErrores;
     private int vidas;
     private int puntuacion;
-    Palabras palabra;
+    private Palabras palabra;
 
     public AhorcadoModelo(AhorcadoPresentador p){
         contadorPista = 0;
@@ -64,7 +64,7 @@ public class AhorcadoModelo implements AhorcadoInterface.Modelo {
     public void darPista() {
         if (contadorPista <= 2) {
             int random = (int) (Math.random() * palabra.palabraOculta.length);
-            boolean pistaCorrecta = comprobarLetra(palabra.palabraLetraALetra[random]);
+            boolean pistaCorrecta = p.comprobarLetra(palabra.palabraLetraALetra[random]);
             if (!pistaCorrecta) {
                 darPista();
             }
@@ -92,11 +92,6 @@ public class AhorcadoModelo implements AhorcadoInterface.Modelo {
     }
 
     @Override
-    public String mostrarPalabraOculta() {
-        return palabra.getPalabraOculta();
-    }
-
-    @Override
     public void partidaPerdida() {
         partidaEnCurso = false;
 
@@ -110,11 +105,6 @@ public class AhorcadoModelo implements AhorcadoInterface.Modelo {
     @Override
     public Palabras getPalabra() {
         return palabra;
-    }
-
-    @Override
-    public void setErrores(int errores) {
-        this.contadorErrores = errores;
     }
 
     @Override

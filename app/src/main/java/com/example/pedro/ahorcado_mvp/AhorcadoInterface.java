@@ -29,12 +29,10 @@ public interface AhorcadoInterface {
         void darPista();
         void rondaGanada();
         void rondaPerdida();
-        String mostrarPalabraOculta();
         void partidaPerdida();
         String damePalbra();
         Palabras getPalabra();
         int getErrores();
-        void setErrores(int errores);
         boolean getPartidaEnCurso();
         int getPuntuacion();
         int getVidas();
@@ -43,12 +41,10 @@ public interface AhorcadoInterface {
     interface Presentador {
         String damePalabra();
         void iniciarPartida();
-        String mostrarPalabraOculta();
         boolean comprobarLetra(String letra);
         String mostrarDefinicion();
         void siguienteRonda();
         void darPista();
-        int getErrores();
         int getVidas();
         int getPuntuacion();
         boolean getEstadoPartida();

@@ -132,7 +132,7 @@ public class AhorcadoVista extends AppCompatActivity implements AhorcadoInterfac
         builder.setView(layout);
         TextView tv = layout.findViewById(R.id.tvMDef);
         TextView tvTitulo = layout.findViewById(R.id.tvTitulo);
-        tvTitulo.setText("DEFINICION DE: "+p.damePalabra());
+        tvTitulo.setText(getString(R.string.definicion_tittle)+p.damePalabra());
         tv.setText(p.mostrarDefinicion());
         AlertDialog dialog = builder.create();
         dialog.show();
