@@ -8,14 +8,21 @@ public interface AhorcadoInterface {
 
     interface Vista {
         void damePista();
-        void mostrarDefinicion(String definicion);
-        void mostrarPalabraOculta();
+        void mostrarDefinicion();
+        void mostrarPalabraOculta(String palabraOculta);
         void siguienteRonda();
         void nuevaPartida();
+        void rondaGanada();
+        void cambiarImagen(int errores);
+        void rondaPerdida();
+        int getErroresMaximos();
+        void partidaPerdida();
+        void mostrarPuntuacion(String puntuacion);
     }
 
-    interface Modelo{
+    interface Modelo {
         void nuevaPartida();
+        boolean comprobarLetra(String letra);
         void siguienteRonda();
         String mostrarDefinicion();
         void darPista();
@@ -23,17 +30,23 @@ public interface AhorcadoInterface {
         void rondaPerdida();
         String mostrarPalabraOculta();
         void partidaPerdida();
+        Palabras getPalabra();
+        int getErrores();
+        void setErrores(int errores);
+        boolean getPartidaEnCurso();
+        int getPuntuacion();
+        int getVidas();
     }
 
-    interface Presentador{
+    interface Presentador {
         void iniciarPartida();
-       void mostrarPalabraOculta();
-       boolean comprobarLetra(String letra);
-       void mostrarDefinicion();
-       void siguienteRonda();
-       void darPista();
-       void rondaGanada();
-       void rondaPerdida();
-       void partidaPerdida();
+        String mostrarPalabraOculta();
+        boolean comprobarLetra(String letra);
+        String mostrarDefinicion();
+        void siguienteRonda();
+        void darPista();
+        int getErrores();
+        int getVidas();
+        boolean getEstadoPartida();
     }
 }

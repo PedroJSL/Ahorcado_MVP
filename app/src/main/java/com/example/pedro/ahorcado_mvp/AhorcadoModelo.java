@@ -4,33 +4,34 @@ public class AhorcadoModelo implements AhorcadoInterface.Modelo {
     private AhorcadoInterface.Presentador p;
     private Diccionario diccionario;
 
-    boolean partidaEnCurso;
+    private boolean partidaEnCurso;
     private boolean pistaUsada;
     private int contadorPista;
-    int contadorErrores;
-    int vidas;
+    private int contadorErrores;
+    private int vidas;
     private int puntuacion;
-    private Palabras palabra;
+    Palabras palabra;
 
     public AhorcadoModelo(AhorcadoPresentador p){
         this.p = p;
         diccionario = new Diccionario();
     }
 
-    private boolean modificarPalabraOculta(String letra){
-        if (palabra.contieneLetra(letra)) {
-            for (int i = 0; i < palabra.palabraLetraALetra.length; i++) {
-                if (palabra.palabraLetraALetra[i].equals(letra)) {
-                    if(palabra.palabraOculta[i].contains(letra)){
-                        return false;
+    @Override
+    public boolean comprobarLetra(String letra){
+            if (palabra.contieneLetra(letra)) {
+                for (int i = 0; i < palabra.palabraLetraALetra.length; i++) {
+                    if (palabra.palabraLetraALetra[i].equals(letra)) {
+                        if (palabra.palabraOculta[i].equals(letra)) {
+                            return false;
+                        }
+                        palabra.palabraOculta[i] = letra;
                     }
-                    palabra.palabraOculta[i] = letra;
                 }
+                return true;
             }
-            return true;
-        }
-        contadorErrores++;
-        return false;
+            contadorErrores++;
+            return false;
     }
 
     @Override
@@ -62,7 +63,7 @@ public class AhorcadoModelo implements AhorcadoInterface.Modelo {
     public void darPista() {
         if (contadorPista <= 2) {
             int random = (int) (Math.random() * palabra.palabraOculta.length);
-            boolean pistaCorrecta = modificarPalabraOculta(palabra.palabraLetraALetra[random]);
+            boolean pistaCorrecta = comprobarLetra(palabra.palabraLetraALetra[random]);
             if (!pistaCorrecta) {
                 darPista();
             }
@@ -96,6 +97,36 @@ public class AhorcadoModelo implements AhorcadoInterface.Modelo {
     public void partidaPerdida() {
         partidaEnCurso = false;
 
+    }
+
+    @Override
+    public Palabras getPalabra() {
+        return palabra;
+    }
+
+    @Override
+    public void setErrores(int errores) {
+        this.contadorErrores = errores;
+    }
+
+    @Override
+    public int getErrores() {
+        return contadorErrores;
+    }
+
+    @Override
+    public boolean getPartidaEnCurso() {
+        return partidaEnCurso;
+    }
+
+    @Override
+    public int getPuntuacion() {
+        return puntuacion;
+    }
+
+    @Override
+    public int getVidas() {
+        return vidas;
     }
 
 
