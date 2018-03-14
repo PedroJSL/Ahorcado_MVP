@@ -23,6 +23,9 @@ public class Palabras {
         return false;
     }
 
+    public String getPalabra() {
+        return palabra;
+    }
 
     private void setPalabraOculta() {
         palabraLetraALetra = new String[palabra.length()];

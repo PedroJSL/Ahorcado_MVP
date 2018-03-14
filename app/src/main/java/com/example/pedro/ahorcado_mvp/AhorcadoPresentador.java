@@ -13,6 +13,11 @@ public class AhorcadoPresentador implements AhorcadoInterface.Presentador {
 
 
     @Override
+    public String damePalabra() {
+        return m.damePalbra();
+    }
+
+    @Override
     public void iniciarPartida() {
         if(v!=null){
             m.nuevaPartida();
@@ -61,11 +66,14 @@ public class AhorcadoPresentador implements AhorcadoInterface.Presentador {
     @Override
     public void siguienteRonda() {
             m.siguienteRonda();
+            v.mostrarPalabraOculta(m.getPalabra().getPalabraOculta());
+
     }
 
     @Override
     public void darPista() {
             m.darPista();
+        v.mostrarPalabraOculta(m.getPalabra().getPalabraOculta());
     }
 
     @Override
@@ -76,6 +84,11 @@ public class AhorcadoPresentador implements AhorcadoInterface.Presentador {
     @Override
     public int getVidas() {
         return m.getVidas();
+    }
+
+    @Override
+    public int getPuntuacion() {
+        return m.getPuntuacion();
     }
 
     @Override

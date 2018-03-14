@@ -30,6 +30,7 @@ public interface AhorcadoInterface {
         void rondaPerdida();
         String mostrarPalabraOculta();
         void partidaPerdida();
+        String damePalbra();
         Palabras getPalabra();
         int getErrores();
         void setErrores(int errores);
@@ -39,6 +40,7 @@ public interface AhorcadoInterface {
     }
 
     interface Presentador {
+        String damePalabra();
         void iniciarPartida();
         String mostrarPalabraOculta();
         boolean comprobarLetra(String letra);
@@ -47,6 +49,7 @@ public interface AhorcadoInterface {
         void darPista();
         int getErrores();
         int getVidas();
+        int getPuntuacion();
         boolean getEstadoPartida();
     }
 }

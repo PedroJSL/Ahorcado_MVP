@@ -107,6 +107,10 @@ public class AhorcadoVista extends AppCompatActivity implements AhorcadoInterfac
     public void pulsarLetra(View v){
         if(p.getEstadoPartida()){
             TextView tv = (TextView) v;
+            if(p.damePalabra().contains(((TextView) v).getText().toString())){
+                tv.setTextColor(getResources().getColor(R.color.acierto));
+
+            }
             if (p.comprobarLetra(tv.getText().toString())) {
                 tv.setTextColor(getResources().getColor(R.color.acierto));
             } else {
@@ -127,6 +131,8 @@ public class AhorcadoVista extends AppCompatActivity implements AhorcadoInterfac
         View layout = this.getLayoutInflater().inflate(R.layout.dialog_definicion,null);
         builder.setView(layout);
         TextView tv = layout.findViewById(R.id.tvMDef);
+        TextView tvTitulo = layout.findViewById(R.id.tvTitulo);
+        tvTitulo.setText("DEFINICION DE: "+p.damePalabra());
         tv.setText(p.mostrarDefinicion());
         AlertDialog dialog = builder.create();
         dialog.show();
@@ -152,7 +158,7 @@ public class AhorcadoVista extends AppCompatActivity implements AhorcadoInterfac
 
     @Override
     public void rondaGanada() {
-        cambiarImagen(R.drawable.victoria);
+        img.setImageResource(R.drawable.victoria);
         bPista.setVisibility(View.GONE);
         bSiguientePalabra.setVisibility(View.VISIBLE);
     }
@@ -164,6 +170,7 @@ public class AhorcadoVista extends AppCompatActivity implements AhorcadoInterfac
 
     @Override
     public void rondaPerdida() {
+        imgDefinicion.setVisibility(View.VISIBLE);
         bPista.setVisibility(View.GONE);
         bSiguientePalabra.setVisibility(View.VISIBLE);
     }
@@ -175,7 +182,9 @@ public class AhorcadoVista extends AppCompatActivity implements AhorcadoInterfac
 
     @Override
     public void partidaPerdida() {
+
         bPista.setVisibility(View.GONE);
+        bSiguientePalabra.setVisibility(View.GONE);
         bNuevaPartida.setVisibility(View.VISIBLE);
     }
 
@@ -185,8 +194,14 @@ public class AhorcadoVista extends AppCompatActivity implements AhorcadoInterfac
     }
 
     private void actualizarLayout(){
+        imgDefinicion.setVisibility(View.GONE);
+        img.setImageResource(R.drawable.fallo_0);
+        bPista.setVisibility(View.VISIBLE);
+        bNuevaPartida.setVisibility(View.GONE);
+        bSiguientePalabra.setVisibility(View.GONE);
         crearTeclado();
         tvVidas.setText(String.valueOf(p.getVidas()));
+        tvPuntos.setText(String.valueOf(p.getPuntuacion()));
 
     }
 

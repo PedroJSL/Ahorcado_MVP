@@ -13,6 +13,7 @@ public class AhorcadoModelo implements AhorcadoInterface.Modelo {
     Palabras palabra;
 
     public AhorcadoModelo(AhorcadoPresentador p){
+        contadorPista = 0;
         this.p = p;
         diccionario = new Diccionario();
     }
@@ -80,6 +81,7 @@ public class AhorcadoModelo implements AhorcadoInterface.Modelo {
         }else {
             puntuacion+=100;
         }
+        contadorPista=0;
     }
 
     @Override
@@ -97,6 +99,11 @@ public class AhorcadoModelo implements AhorcadoInterface.Modelo {
     public void partidaPerdida() {
         partidaEnCurso = false;
 
+    }
+
+    @Override
+    public String damePalbra() {
+        return  palabra.getPalabra();
     }
 
     @Override
