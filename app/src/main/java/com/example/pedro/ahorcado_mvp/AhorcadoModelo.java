@@ -4,11 +4,11 @@ public class AhorcadoModelo implements AhorcadoInterface.Modelo {
     private AhorcadoInterface.Presentador p;
     private Diccionario diccionario;
 
-    private boolean partidaEnCurso;
+    boolean partidaEnCurso;
     private boolean pistaUsada;
     private int contadorPista;
-    private int contadorErrores;
-    private int vidas;
+    int contadorErrores;
+    int vidas;
     private int puntuacion;
     private Palabras palabra;
 
@@ -84,6 +84,7 @@ public class AhorcadoModelo implements AhorcadoInterface.Modelo {
     @Override
     public void rondaPerdida() {
         partidaEnCurso = false;
+        vidas--;
     }
 
     @Override
@@ -93,7 +94,7 @@ public class AhorcadoModelo implements AhorcadoInterface.Modelo {
 
     @Override
     public void partidaPerdida() {
-
+        partidaEnCurso = false;
 
     }
 
