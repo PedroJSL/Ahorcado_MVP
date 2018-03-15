@@ -4,6 +4,8 @@ public class AhorcadoModelo implements AhorcadoInterface.Modelo {
     private AhorcadoInterface.Presentador p;
     private Diccionario diccionario;
 
+
+
     private boolean partidaEnCurso;
     private boolean pistaUsada;
     private int contadorPista;
@@ -13,9 +15,12 @@ public class AhorcadoModelo implements AhorcadoInterface.Modelo {
     private Palabras palabra;
 
     public AhorcadoModelo(AhorcadoPresentador p){
+
+
         contadorPista = 0;
         this.p = p;
         diccionario = new Diccionario();
+
     }
 
     @Override
@@ -63,14 +68,31 @@ public class AhorcadoModelo implements AhorcadoInterface.Modelo {
     @Override
     public void darPista() {
         if (contadorPista <= 2) {
-            int random = (int) (Math.random() * palabra.palabraOculta.length);
-            boolean pistaCorrecta = p.comprobarLetra(palabra.palabraLetraALetra[random]);
-            if (!pistaCorrecta) {
-                darPista();
+            int rand =  (int) (Math.random() * palabra.palabraOculta.length);
+            if(contadorPista==0){
+
+                boolean pistaCorrecta = p.comprobarLetra(palabra.palabraLetraALetra[rand]);
+                if (!pistaCorrecta) {
+                    darPista();
+                }
+                p.validarPista(palabra.palabraLetraALetra[rand]);
+                contadorPista++;
+                pistaUsada = true;
             }
-            p.validarPista(palabra.palabraLetraALetra[random]);
-            contadorPista++;
-            pistaUsada = true;
+            else if(contadorPista==1){
+               int random =  (int) (Math.random() * palabra.palabraOculta.length);
+              while(random==rand){
+                   random =  (int) (Math.random() * palabra.palabraOculta.length);
+               }
+                boolean pistaCorrecta = p.comprobarLetra(palabra.palabraLetraALetra[random]);
+                if (!pistaCorrecta) {
+                    darPista();
+                }
+                p.validarPista(palabra.palabraLetraALetra[random]);
+                contadorPista++;
+                pistaUsada = true;
+            }
+
         }
     }
 
