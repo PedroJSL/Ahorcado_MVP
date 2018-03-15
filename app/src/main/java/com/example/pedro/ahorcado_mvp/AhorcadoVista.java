@@ -135,7 +135,7 @@ public class AhorcadoVista extends AppCompatActivity implements AhorcadoInterfac
         builder.setView(layout);
         TextView tv = layout.findViewById(R.id.tvMDef);
         TextView tvTitulo = layout.findViewById(R.id.tvTitulo);
-        tvTitulo.setText(getString(R.string.definicion_tittle)+p.damePalabra());
+        tvTitulo.setText(getString(R.string.definicion_tittle)+" "+p.damePalabra());
         tv.setText(p.mostrarDefinicion());
         AlertDialog dialog = builder.create();
         dialog.show();
@@ -212,6 +212,7 @@ public class AhorcadoVista extends AppCompatActivity implements AhorcadoInterfac
         imgDefinicion.setVisibility(View.GONE);
         img.setImageResource(R.drawable.fallo_0);
         bPista.setVisibility(View.VISIBLE);
+        bPista.setEnabled(true);
         bNuevaPartida.setVisibility(View.GONE);
         bSiguientePalabra.setVisibility(View.GONE);
         crearTeclado();

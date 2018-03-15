@@ -91,7 +91,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_margin="5dp"
-        android:background="#0b47fd"
+        android:background="@drawable/button_style"
         android:text="@string/pista"
         android:textColor="@color/colorAccent" />
 
@@ -101,7 +101,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_margin="5dp"
-        android:background="#0b47fd"
+        android:background="@drawable/button_style"
         android:text="@string/continuar"
         android:textColor="@color/colorAccent"
         android:visibility="gone" />
@@ -112,7 +112,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_margin="5dp"
-        android:background="#0b47fd"
+        android:background="@drawable/button_style"
         android:text="@string/nueva_partida"
         android:textColor="@color/colorAccent"
         android:visibility="gone" />

@@ -7,4 +7,5 @@
     <color name="error">#FF0000</color>
     <color name="acierto">#00FF00</color>
     <color name="letra_def">#000</color>
+    <color name="disabled">#414348</color>
 </resources>
