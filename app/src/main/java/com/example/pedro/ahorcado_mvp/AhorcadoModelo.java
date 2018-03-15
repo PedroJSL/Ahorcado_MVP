@@ -120,7 +120,7 @@ public class AhorcadoModelo implements AhorcadoInterface.Modelo {
     }
 
     @Override
-    public String damePalbra() {
+    public String damePalabra() {
         return  palabra.getPalabra();
     }
 
@@ -147,6 +147,11 @@ public class AhorcadoModelo implements AhorcadoInterface.Modelo {
     @Override
     public int getVidas() {
         return vidas;
+    }
+
+    @Override
+    public int getPistasUsadas() {
+        return contadorPista;
     }
 
 

@@ -9,7 +9,7 @@
         android:id="@+id/tvTitulo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="25sp"
+        android:textSize="22sp"
         android:textColor="@color/colorPrimary"
         android:layout_margin="20dp"/>
 
@@ -22,7 +22,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/tvMDef"
-        android:textSize="15sp"
+        android:textSize="18sp"
         android:textColor="@color/letra_def"
         android:layout_margin="20dp"/>
 

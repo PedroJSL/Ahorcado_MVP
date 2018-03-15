@@ -30,12 +30,13 @@ public interface AhorcadoInterface {
         void rondaGanada();
         void rondaPerdida();
         void partidaPerdida();
-        String damePalbra();
+        String damePalabra();
         Palabras getPalabra();
         int getErrores();
         boolean getPartidaEnCurso();
         int getPuntuacion();
         int getVidas();
+        int getPistasUsadas();
     }
 
     interface Presentador {
@@ -49,5 +50,6 @@ public interface AhorcadoInterface {
         int getPuntuacion();
         boolean getEstadoPartida();
         void validarPista(String pista);
+        int getPistasUsadas();
     }
 }

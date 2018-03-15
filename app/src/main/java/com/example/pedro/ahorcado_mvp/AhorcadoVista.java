@@ -123,6 +123,9 @@ public class AhorcadoVista extends AppCompatActivity implements AhorcadoInterfac
     @Override
     public void damePista() {
         p.darPista();
+        if(p.getPistasUsadas()>=2){
+            bPista.setEnabled(false);
+        }
     }
 
     @Override
@@ -158,6 +161,7 @@ public class AhorcadoVista extends AppCompatActivity implements AhorcadoInterfac
 
     @Override
     public void rondaGanada() {
+        imgDefinicion.setVisibility(View.VISIBLE);
         img.setImageResource(R.drawable.victoria);
         bPista.setVisibility(View.GONE);
         bSiguientePalabra.setVisibility(View.VISIBLE);

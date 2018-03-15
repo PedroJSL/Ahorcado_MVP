@@ -14,7 +14,7 @@ public class AhorcadoPresentador implements AhorcadoInterface.Presentador {
 
     @Override
     public String damePalabra() {
-        return m.damePalbra();
+        return m.damePalabra();
     }
 
     @Override
@@ -88,6 +88,11 @@ public class AhorcadoPresentador implements AhorcadoInterface.Presentador {
     @Override
     public void validarPista(String pista) {
         v.validarPista(pista);
+    }
+
+    @Override
+    public int getPistasUsadas() {
+        return m.getPistasUsadas();
     }
 
 
